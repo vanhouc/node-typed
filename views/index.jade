@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+  head
+    title= Responsive
+    script(type='text/javascript').
+      if (foo) {
+         bar(1 + 5)
+      }
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css")
+    link(rel="stylesheet" types="text/css" href="css/style.css")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js")
+  body
+    .container
+        .row
+            .col-md-12
+                h1(class="page-header") Magical Response Page
+        .row
+            .col-md-12
+                .header
+                    ul
+                        li
+                            a(class="btn btn-default" href='#') Place 1
+                        li
+                            a(class="btn btn-default" href='/forum') Forums
+                        li
+                            a(class="btn btn-default" href='/contact') Contact
+                p This is some cool text
+                img(class="img-responsive" style="height: 50%" src="http://placehold.it/1024x768")
+        .row
+            .col-md-12
+                .jumbotron(style="margin-top: 10px") 
+                    h3 HELLO IM A JUMBOTRON
+                    p Take a look at all the cool stuff we've got going on!
