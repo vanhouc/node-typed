@@ -1,18 +1,27 @@
 var express = require('express');
-var serveStatic = require('serve-static');
 var app = express();
+
+//Use the Jade template engine for rendering jade views
 app.set('view engine', 'jade');
+
+//Allow serving static content out of the css folder
 app.use('/css', express.static(__dirname + '/css'));
-app.get('/hello.txt', function(req, res){
-   res.send('Hello World');
+
+
+//The following are a series of routes to the pages on the site
+//
+app.get('/chat', function(req, res) {
+    res.render('chat');
 });
 app.get('/forum', function(req,res){
-    console.log('Getting /forum')
     res.render('forums');
 });
 app.get('/contact', function(req, res) {
     res.render('contacts');
-})
+});
+app.get('/index', function(req, res){
+    res.render('index');
+});
 app.get('/', function(req,res){
     res.render('index');
 });

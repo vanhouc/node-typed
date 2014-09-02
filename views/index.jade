@@ -1,33 +1,34 @@
 doctype html
 html(lang="en")
   head
-    title= Responsive
-    script(type='text/javascript').
-      if (foo) {
-         bar(1 + 5)
-      }
+    title Home
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css")
     link(rel="stylesheet" types="text/css" href="css/style.css")
-    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js")
   body
     .container
+        h1(class="page-header") Homepage
+        include partials/navbar.jade
         .row
-            .col-md-12
-                h1(class="page-header") Magical Response Page
-        .row
-            .col-md-12
-                .header
-                    ul
-                        li
-                            a(class="btn btn-default" href='#') Place 1
-                        li
-                            a(class="btn btn-default" href='/forum') Forums
-                        li
-                            a(class="btn btn-default" href='/contact') Contact
-                p This is some cool text
-                img(class="img-responsive" style="height: 50%" src="http://placehold.it/1024x768")
-        .row
-            .col-md-12
-                .jumbotron(style="margin-top: 10px") 
-                    h3 HELLO IM A JUMBOTRON
-                    p Take a look at all the cool stuff we've got going on!
+            .col-md-6
+                p The latest pictures from our #Meetup
+                img.img-thumbnail(class="img-responsive" src="http://placehold.it/1024x768")
+            .col-md-6
+                .panel(class="panel-default" style="margin-top: 3%")
+                    .panel-heading
+                        h4.panel-title News!
+                    .panel-body
+                        p This is the latest news about the site!
+                .panel(class="panel-default")
+                    .panel-heading
+                        h4.panel-title Older News!
+                    .panel-body
+                        p This is NOT the latest news about the site!
+                .panel(class="panel-default")
+                    .panel-heading
+                        h4.panel-title Old News!
+                    .panel-body
+                        p This is the opposite of the latest news about the site!
+        .row: .col-md-12
+            .jumbotron(style="margin-top: 10px") 
+                h3 HELLO IM A JUMBOTRON
+                p Take a look at all the cool stuff we've got going on!
