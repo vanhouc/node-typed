@@ -1,16 +1,23 @@
 var gulp = require('gulp');
-var typescript = require('gulp-typescript');
-var del = require('del');
-gulp.task('clean', function(){
-   del(['public'], function(err){
-       console.log("Files Deleted");
-   }); 
+var ts = require('gulp-type');
+var tslint = require('gulp-tslint');
+
+gulp.task('tslint', function(){
+      gulp.src('*.ts')
+        .pipe(tslint())
+        .pipe(tslint.report('prose'));
 });
-gulp.task('scripts', ['clean'], function(){
-        return gulp.src('server.ts')
-        .pipe(gulp.dest('public'));
+gulp.task('scripts', function(){
+    var tsResult = gulp.src('*.ts')
+                       .pipe(ts({
+                           declarationFiles: true,
+                           noExternalResolve: false,
+                           module: 'commonjs'
+                       }));
+    tsResult.dts.pipe(gulp.dest('release/definitions'));
+    return tsResult.js.pipe(gulp.dest('release/js'));
 });
 gulp.task('watch', function(){
-    gulp.watch('/', ['scripts']);
+    gulp.watch('*.ts', ['scripts']);
 });
-gulp.task('default', ['scripts']);
+gulp.task('default', ['tslint','scripts']);

@@ -1,82 +1,77 @@
-doctype html
-html(lang="en")
-  head
-    title Forums
-    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css")
-    link(rel="stylesheet" types="text/css" href="css/style.css")
-    script(src="//code.jquery.com/jquery-2.1.1.min.js")
-    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js")
-    body
-      .container
-        h1.page-header Welcome to the forums
-        include partials/navbar.jade
-        article.panel-group#accordian
-          section.panel(class="panel-default")
-            .panel-heading
-              h4.panel-title
-                a(data-toggle="collapse" data-parent="#accordian" href="#collapseOne") Conversation 1
-            .panel-collapse(class="collapse in" id="collapseOne")
-              .panel-body
-                ul.media-list
-                  li.media
-                    a.pull-left(href="#")
-                      img(class="media-object" src="http://placehold.it/64x64")
-                    div.media-body
-                      h4.media-heading Media heading
-                  li.media
-                    a.pull-left(href="#")
-                      img(class="media-object" src="http://placehold.it/64x64")
-                    div.media-body
-                      h4.media-heading Media heading
-                  li.media
-                    a.pull-left(href="#")
-                      img(class="media-object" src="http://placehold.it/64x64")
-                    div.media-body
-                      h4.media-heading Media heading
-                      p Blah blah blah
-          section.panel(class="panel-default")
-            .panel-heading
-              h4.panel-title
-                a(data-toggle="collapse" data-parent="#accordian" href="#collapseTwo") Conversation 2
-            .panel-collapse(class="collapse" id="collapseTwo")
-              .panel-body
-                ul.media-list
-                  li.media
-                    a.pull-left(href="#")
-                      img(class="media-object" src="http://placehold.it/64x64")
-                    div.media-body
-                      h4.media-heading Media heading
-                  li.media
-                    a.pull-left(href="#")
-                      img(class="media-object" src="http://placehold.it/64x64")
-                    div.media-body
-                      h4.media-heading Media heading
-                  li.media
-                    a.pull-left(href="#")
-                      img(class="media-object" src="http://placehold.it/64x64")
-                    div.media-body
-                      h4.media-heading Media heading
-                      p Blah blah blah
-          section.panel(class="panel-default")
-            .panel-heading
-              h4.panel-title
-                a(data-toggle="collapse" data-parent="#accordian" href="#collapseThree") Conversation 3
-            .panel-collapse(class="collapse" id="collapseThree")
-              .panel-body
-                ul.media-list
-                  li.media
-                    a.pull-left(href="#")
-                      img(class="media-object" src="http://placehold.it/64x64")
-                    div.media-body
-                      h4.media-heading Media heading
-                  li.media
-                    a.pull-left(href="#")
-                      img(class="media-object" src="http://placehold.it/64x64")
-                    div.media-body
-                      h4.media-heading Media heading
-                  li.media
-                    a.pull-left(href="#")
-                      img(class="media-object" src="http://placehold.it/64x64")
-                    div.media-body
-                      h4.media-heading Media heading
-                      p Blah blah blah
+extends ./_template.jade
+block variables
+    - var titleText = "Forums";
+block header
+  script(src="//code.jquery.com/jquery-2.1.1.min.js")
+  script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js")
+block content
+  article.panel-group#accordian
+    section.panel(class="panel-default")
+      .panel-heading
+        h4.panel-title
+          a(data-toggle="collapse" data-parent="#accordian" href="#collapseOne") Conversation 1
+      .panel-collapse(class="collapse in" id="collapseOne")
+        .panel-body
+          ul.media-list
+            li.media
+              a.pull-left(href="#")
+                img(class="media-object" src="http://placehold.it/64x64")
+              div.media-body
+                h4.media-heading Media heading
+            li.media
+              a.pull-left(href="#")
+                img(class="media-object" src="http://placehold.it/64x64")
+              div.media-body
+                h4.media-heading Media heading
+            li.media
+              a.pull-left(href="#")
+                img(class="media-object" src="http://placehold.it/64x64")
+              div.media-body
+                h4.media-heading Media heading
+                p Blah blah blah
+    section.panel(class="panel-default")
+      .panel-heading
+        h4.panel-title
+          a(data-toggle="collapse" data-parent="#accordian" href="#collapseTwo") Conversation 2
+      .panel-collapse(class="collapse" id="collapseTwo")
+        .panel-body
+          ul.media-list
+            li.media
+              a.pull-left(href="#")
+                img(class="media-object" src="http://placehold.it/64x64")
+              div.media-body
+                h4.media-heading Media heading
+            li.media
+              a.pull-left(href="#")
+                img(class="media-object" src="http://placehold.it/64x64")
+              div.media-body
+                h4.media-heading Media heading
+            li.media
+              a.pull-left(href="#")
+                img(class="media-object" src="http://placehold.it/64x64")
+              div.media-body
+                h4.media-heading Media heading
+                p Blah blah blah
+    section.panel(class="panel-default")
+      .panel-heading
+        h4.panel-title
+          a(data-toggle="collapse" data-parent="#accordian" href="#collapseThree") Conversation 3
+      .panel-collapse(class="collapse" id="collapseThree")
+        .panel-body
+          ul.media-list
+            li.media
+              a.pull-left(href="#")
+                img(class="media-object" src="http://placehold.it/64x64")
+              div.media-body
+                h4.media-heading Media heading
+            li.media
+              a.pull-left(href="#")
+                img(class="media-object" src="http://placehold.it/64x64")
+              div.media-body
+                h4.media-heading Media heading
+            li.media
+              a.pull-left(href="#")
+                img(class="media-object" src="http://placehold.it/64x64")
+              div.media-body
+                h4.media-heading Media heading
+                p Blah blah blah

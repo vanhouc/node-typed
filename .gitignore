@@ -26,3 +26,9 @@ node_modules
 
 #Cloud9 details
 .c9/
+
+#Release Directory
+release/
+
+#Typings
+typings/

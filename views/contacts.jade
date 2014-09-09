@@ -1,18 +1,12 @@
-doctype html
-html(lang="en")
-    head
-        title Contacts
-        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css")
-        link(rel="stylesheet" types="text/css" href="css/style.css")
-    body
-        .container
-            h1.page-header Contact Me!
-            include partials/navbar.jade
-            .media
-                a.pull-left(href="#")
-                  img(class="media-object" src="http://placehold.it/128x128")
-                div.media-body
-                  h4.media-heading Cameron VanHouzen
-                p Hello! I am the creator of this website
-                p Phone: (231)-649-1777
-                p Address: Sorry folks
+extends ./_template.jade
+block variables
+    - var titleText = "Contact";
+block content
+    .media
+        a.pull-left(href="#")
+          img(class="media-object" src="http://placehold.it/128x128")
+        div.media-body
+          h4.media-heading Cameron VanHouzen
+        p Hello! I am the creator of this website
+        p Phone: (231)-649-1777
+        p Address: Sorry folks

@@ -1,37 +1,31 @@
-doctype html
-html(lang="en")
-    head
-        title Chatroom
-        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css")
-        link(rel="stylesheet" types="text/css" href="css/style.css")
-    body
-    .container
-        h1.page-header Chatrooms
-        include partials/navbar.jade
-        .row
-            .col-md-3
-                .panel(class="panel-default")
-                    .panel-body
-                        h3 Users In Room
-                        ul.list-group
-                            li.list-group-item Anonymous
-                            li.list-group-item Placeholder
-            .col-md-9
-                h2 Conversation
-                table.table
-                    tr
-                        th Username
-                        th Message
-                    tr
-                        td Anonymous
-                        td Not a real message!
-                    tr
-                        td Placeholder
-                        td Never fear, the real thing will be working soon!
-        .row
-            .col-md-3
-            .col-md-9
-                .input-group
-                    span.input-group-btn
-                        button.btn(class="btn-primary" type="button") Send!
-                    input.form-control(type="text")
+extends ./_template.jade
+block variables
+    - var titleText = "Chat";
+block content
+    .row
+        .col-md-3
+            .panel(class="panel-default")
+                .panel-body
+                    h3 Users In Room
+                    ul.list-group
+                        li.list-group-item Anonymous
+                        li.list-group-item Placeholder
+        .col-md-9
+            h2 Conversation
+            table.table
+                tr
+                    th Username
+                    th Message
+                tr
+                    td Anonymous
+                    td Not a real message!
+                tr
+                    td Placeholder
+                    td Never fear, the real thing will be working soon!
+    .row
+        .col-md-3
+        .col-md-9
+            .input-group
+                span.input-group-btn
+                    button.btn(class="btn-primary" type="button") Send!
+                input.form-control(type="text")

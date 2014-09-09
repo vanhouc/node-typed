@@ -1,19 +1,15 @@
-doctype html
-html(lang="en")
-  head
-    title Home
-    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css")
-    link(rel="stylesheet" types="text/css" href="css/style.css")
-  body
-    .container
-        h1(class="page-header") Homepage
-        include partials/navbar.jade
+extends ./_template.jade
+block variables
+    - var titleText = "Home";
+block content
         .row
             .col-md-6
                 p The latest pictures from our #Meetup
-                img.img-thumbnail(class="img-responsive" src="http://placehold.it/1024x768")
+        .row
             .col-md-6
-                .panel(class="panel-default" style="margin-top: 3%")
+                img.img-thumbnail(class="img-responsive" src="http://placehold.it/1024x768")
+            .col-md-6#news
+                .panel(class="panel-default")
                     .panel-heading
                         h4.panel-title News!
                     .panel-body

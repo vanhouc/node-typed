@@ -1,0 +1,22 @@
+doctype html
+html
+    head
+        block variables
+            - var titleText = "Default Title"
+        block title
+            title= titleText
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css")
+    link(rel="stylesheet" types="text/css" href="css/style.css")
+    block header
+    body
+        .container
+            nav.row
+                .col-md-12
+                h1.page-header= titleText
+                .header
+                    ul
+                        li: a(class="btn btn-default" href='/index') Home
+                        li: a(class="btn btn-default" href='/chat') Chat
+                        li: a(class="btn btn-default" href='/forum') Forums
+                        li: a(class="btn btn-default" href='/contact') Contact
+            block content
