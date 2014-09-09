@@ -3,10 +3,10 @@ import express = require("express");
 var app = express();
 //Use the Jade template engine for rendering jade views
 app.set('view engine', 'jade');
+app.set('views', __dirname + '/content');
 
 //Allow serving static content out of the css folder
-app.use('/css', express.static(__dirname + '/css'));
-
+app.use('/css', express.static(__dirname + '/content'));
 
 //The following are a series of routes to the pages on the site
 //

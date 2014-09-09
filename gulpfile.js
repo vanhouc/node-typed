@@ -8,16 +8,34 @@ gulp.task('tslint', function(){
         .pipe(tslint.report('prose'));
 });
 gulp.task('scripts', function(){
-    var tsResult = gulp.src('*.ts')
+    var tsResult = gulp.src('scripts/*.ts')
                        .pipe(ts({
-                           declarationFiles: true,
+                           declarationFiles: false,
                            noExternalResolve: false,
                            module: 'commonjs'
                        }));
-    tsResult.dts.pipe(gulp.dest('release/definitions'));
     return tsResult.js.pipe(gulp.dest('release/js'));
 });
-gulp.task('watch', function(){
-    gulp.watch('*.ts', ['scripts']);
+gulp.task('server', function(){
+    var tsResult = gulp.src('server.ts')
+                       .pipe(ts({
+                           declarationFiles: false,
+                           noExternalResolve: false,
+                           module: 'commonjs'
+                       }));
+    return tsResult.js.pipe(gulp.dest('release'));
 });
-gulp.task('default', ['tslint','scripts']);
+gulp.task('views', function(){
+   return gulp.src('views/*.jade')
+   .pipe(gulp.dest('release/content'));
+});
+gulp.task('css', function(){
+   return gulp.src('css/*.css')
+   .pipe(gulp.dest('release/content'));
+});
+gulp.task('watch', function(){
+    gulp.watch('server.ts', ['server']);
+    gulp.watch('scripts/*.ts', ['scripts']);
+    gulp.watch('views/*.jade', ['content']);
+});
+gulp.task('default', ['tslint','server','scripts','views','css']);
