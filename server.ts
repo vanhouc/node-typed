@@ -20,7 +20,7 @@ app.get('/contact', function(req, res) {
     res.render('contacts');
 });
 app.get('/index', function(req, res){
-    res.render('index');
+    res.render('better-index');
 });
 app.get('/', function(req,res){
     res.render('index');

@@ -36,6 +36,7 @@ gulp.task('css', function(){
 gulp.task('watch', function(){
     gulp.watch('server.ts', ['server']);
     gulp.watch('scripts/*.ts', ['scripts']);
-    gulp.watch('views/*.jade', ['content']);
+    gulp.watch('views/*.jade', ['views']);
+    gulp.watch('css/*.css', ['css']);
 });
-gulp.task('default', ['server','scripts','views','css']);
+gulp.task('default', ['server','scripts','views','css','watch']);
