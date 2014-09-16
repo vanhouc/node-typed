@@ -7,7 +7,7 @@ gulp.task('tslint', function(){
         .pipe(tslint())
         .pipe(tslint.report('prose'));
 });
-gulp.task('scripts', function(){
+gulp.task('scripts', ['tslint'], function(){
     var tsResult = gulp.src('scripts/*.ts')
                        .pipe(ts({
                            declarationFiles: false,
@@ -16,7 +16,7 @@ gulp.task('scripts', function(){
                        }));
     return tsResult.js.pipe(gulp.dest('release/js'));
 });
-gulp.task('server', function(){
+gulp.task('server', ['tslint'], function(){
     var tsResult = gulp.src('server.ts')
                        .pipe(ts({
                            declarationFiles: false,
@@ -38,4 +38,4 @@ gulp.task('watch', function(){
     gulp.watch('scripts/*.ts', ['scripts']);
     gulp.watch('views/*.jade', ['content']);
 });
-gulp.task('default', ['tslint','server','scripts','views','css']);
+gulp.task('default', ['server','scripts','views','css']);
